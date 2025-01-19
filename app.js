@@ -71,6 +71,25 @@ function searchTwo() {
 // ==================================================================================
 
 
+function searchThree() {
+  const searchInputThree = document.getElementById('searchInput-three').value.toUpperCase();
+  const productThree = document.querySelectorAll('.product-box');
+
+  productThree.forEach( (item) => {
+    const headlineThree = item.querySelector('.product-name');
+    const headLineText = headlineThree ? headlineThree.textContent || headlineThree.innerText : "";
+
+    if (headLineText.toUpperCase().includes(searchInputThree)) {
+      item.style.display = "";  // or "" to restore default display if needed
+  } else {
+      item.style.display = "none";
+  }
+
+  });
+
+}
+
+
 // 01. --------------cart active and deactive-------------------
 const cartIcon = document.querySelector('.cart-menu');
 const cartBody = document.querySelector('#cart-body');
@@ -97,7 +116,7 @@ addCartBtns.forEach( (btn) => {
 
 // 02. step04
 const cartBodyContent = document.querySelector('.cart-body-content');
-// 02. step02
+// 02. step02 main function
 const addToCart = productBox =>{
   const productImgSrc = productBox.querySelector('.img-box img').src;
   const productName = productBox.querySelector('.product-name').textContent;
@@ -111,7 +130,7 @@ const addToCart = productBox =>{
 
   newCartBox.innerHTML = `
   <img src="${productImgSrc}" alt="" class="cart-img">
-  <div class="cart-details">
+  <div class="cart-details"> 
       <h2 class="cart-details-name">${productName}</h2>
       <span class="cart-price">${productPrice}</span>
       <div class="cart-qty">
@@ -137,12 +156,96 @@ const addToCart = productBox =>{
   // 02. step04
   cartBodyContent.appendChild(newCartBox);
 
+
+
    //  04. -------------------remove cart items when click trash box -------------- 
    newCartBox.querySelector('#card-remove').addEventListener('click', () => {
     newCartBox.remove();
+
+    updateCartCountBadge(-1); //call from 07
+    updateTotalPrice(); //call from 06
    });
 
+
+
    //  05. -------------------remove cart items when click trash box -------------- 
+  newCartBox.querySelector('.cart-qty').addEventListener('click', event => {
+    const numberElement = newCartBox.querySelector('.number');
+    const minusBtn = newCartBox.querySelector('#minus');
+  
+    let qty = numberElement.textContent;
+  
+    if (event.target.id === 'minus' && qty > 1) {
+      numberElement.textContent = --qty;
+      if (qty === 1) minusBtn.style.color = '#999'; 
+    } 
+    else if (event.target.id === 'plus') {
+      numberElement.textContent = ++qty;
+      minusBtn.style.color = '#333'; 
+    }
+    updateTotalPrice(); //call from 06
+  });
+
+  updateCartCountBadge(1); //call from 07
+  updateTotalPrice(); //call from 06
+  
 
 };
+
+//  06. -------------------update total price -------------- 
+
+const updateTotalPrice = () => {
+  const totalPrice = document.querySelector('.total-price');
+  const cartBoxes = cartBodyContent.querySelectorAll('.cart-box');
+  let total = 0;
+  cartBoxes.forEach( cartbox => {
+    const priceElement = cartbox.querySelector('.cart-price');
+    const qtyElement = cartbox.querySelector('.number');
+    const prices = priceElement.textContent.replace( '$', '');
+    const qty = qtyElement.textContent;
+
+    total += prices * qty;
+
+  });
+  totalPrice.textContent = `$${total}`;
+};
+
+
+//  07. -------------------counting cart icon  on  -------------- 
+
+let cartCountIndex = 0;
+const updateCartCountBadge = change => {
+  const cartItemCount = document.querySelector('.cart-count');
+
+  cartCountIndex += change;
+  if(cartCountIndex > 0){
+    cartItemCount.style.visibility = 'visible';
+    cartItemCount.textContent = cartCountIndex;
+  }else{
+    cartItemCount.style.visibility = 'hidden';
+    cartItemCount.textContent = '';
+
+  }
+
+};
+
+//  08. -------------------buy button update --------------
+
+
+const buyButton = document.querySelector('.buy_btn');
+buyButton.addEventListener('click', () => {
+  const cartBox = document.querySelectorAll('.cart-box');
+
+  if(cartBox.length === 0) {
+    alert('your cart is empty');
+    return;
+  }
+  cartBox.forEach ( cartBox => cartBox.remove());
+  cartCountIndex = 0;
+  updateCartCountBadge(0); //call from 07
+  updateTotalPrice(); //call from 06
+
+  alert('Thank you for purshase');
+})
+
 
