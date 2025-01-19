@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search filter and image card (inspired by W3school.com)">
+    <meta name="keywords" content="Custom design Css and javascript only">
+    <meta name="author" content="sumit sarkar">
+
+    <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ionicon link  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/7.4.0/esm/ionicons.min.js" integrity="sha512-heZj7rPbZHWyOEhE34vsJkzj2DKK2mZ9D3jjMkXQJ0uMGu/m5iOty+le26NL1eFZ5+qa4XBYcflwYwITwCWufw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- favicon section  -->
+    <link rel="shortcut icon" href="https://workmatejob.com/images/avatars/avatar_901168716077495851.jpg" type="image/x-icon">
+    <!-- this is Css section  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- this is google font section  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    
+    <title>Image card and search filter</title>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ==============================section one=============================== -->
+        <section id="sec-one">
+            <h2>1 . section one</h2>
+            <p class="section-peragraph">product search filter & button filter</p>
+            <div class="slideOne">
+                <div class="slideOne-btn">
+                    <button class="btn_one active-one" onclick="filterSelectionOne('all')">  All</button>
+                    <button class="btn_one" onclick="filterSelectionOne('watch')"> watch</button>
+                    <button class="btn_one" onclick="filterSelectionOne('blazer')"> blazer</button>
+                    
+                    <button class="btn_one " onclick="filterSelectionOne('shoes')"> shoes</button>
+                    <button class="btn_one " onclick="filterSelectionOne('belt')"> belt</button>
+                    <button class="btn_one " onclick="filterSelectionOne('wallet')">wallet</button>
+                </div>
+                <div class="slideOne-search">
+                   
+                    <input type="" name="search" id="searchOne-input" placeholder="search.." autocomplete onkeyup="searchOn()">
+                    <a href="" class="searchIcon"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    
+                </div>
+
+            </div>
+           
+
+            <div class="slideOne-container" id="storeItem" >
+
+                <div class="slideOne-content blazer active-one">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/blazer (1).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">blazer red</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content watch">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/watch (1).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">men Watch gold</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content shoes">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/shoes (1).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">loffer black top</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content belt">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/belt (1).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">leather belt</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content wallet">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/wallet (1).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">Golf wallet</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="slideOne-content blazer ">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/blazer (2).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">blazer black</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content watch">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/watch (2).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">band xii</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content shoes">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/shoes (1).webp" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">red black keds</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content belt">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/belt (1).webp" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">leather belt green</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content wallet">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/wallet (1).webp" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">cards wallet</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="slideOne-content blazer ">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/blazer (3).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">blazer china</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content watch">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/watch (3).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">band houaee grey</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content shoes">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/shoes (2).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">white keds</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content belt">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/belt (2).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">cowboy belt </h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content wallet">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/wallet (2).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">long wallet</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="slideOne-content blazer ">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/blazer (4).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">grey shute</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content watch">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/watch (4).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">leather belt metal</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content shoes">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/shoes (3).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">shine boot</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content belt">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/belt (3).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">gorjeous belt </h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content wallet">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/wallet (3).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">cotton wallet</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="slideOne-content blazer ">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/blazer (5).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">denim cotton shute</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content watch">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/watch (5).png" alt="" class="store-img" width="300px">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">chain wrist watch</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content shoes">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/shoes (4).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">polish shoe</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content belt">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/belt (4).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">shine coffee belt </h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="slideOne-content wallet">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="img/wallet (4).png" alt="" class="store-img">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h5 class="headlineOne">half leather wallet</h5>
+                                <h2>$ 30.00</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </section>
+
+         <!-- ==============================section two=============================== -->
+
+        <section id="sec-two">
+            <h2>2 . section two</h2>
+            <p class="section-peragraph">product search engine</p>
+
+            <div class="secTwo-container">
+               
+                
+                <div class="secTwo-search-body">
+                    <a href="" class="search-img"><img src="img/search (2).png" alt="" width="20px"></a>
+                    <input type="search" name="" id="searchTwo-input" placeholder="search products" onkeyup="searchTwo()">
+                </div>
+               
+                <div class="secTwo-content-body" id="storeItem-Two">
+
+                    <div class="secTwo-content">
+                        <img src="img/blazer (1).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">blazer red color</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/belt (1).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">belt fon men leather</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/belt (1).webp" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">belt for men green</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/belt (2).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">belt for men cowboy</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wallet cotton for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wallet half cotton for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (1).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wrist watch metal for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (2).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">band Mi for unicode</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">Band white grey for unicode </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">hevey leather watch for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (5).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">Chain wrist metal for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/belt (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">belt for men pure leather</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/blazer (2).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">blazer black grey</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/blazer (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">blazer unicode box</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/blazer (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">office shuit white</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/blazer (5).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">cotton shuit for men</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/shoes (1).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">loffer black for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/shoes (1).webp" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">keds for men style </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/shoes (2).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wite keds for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/shoes (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">boot unistyle for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wallet cotton for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wallet half cotton for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (1).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wrist watch metal for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (2).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">band Mi for unicode</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">Band white grey for unicode </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">hevey leather watch for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (5).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">Chain wrist metal for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/shoes (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">office shoe for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (1).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">leather wallet for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (1).webp" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">card wallet for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (2).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">long wallet for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wallet cotton for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/wallet (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wallet half cotton for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (1).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">wrist watch metal for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (2).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">band Mi for unicode</h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (3).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">Band white grey for unicode </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (4).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">hevey leather watch for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                    <div class="secTwo-content">
+                        <img src="img/watch (5).png" alt="" id="secTwo-img">
+                        <div class="sectwo-body">
+                            <h4 class="h4_two">Chain wrist metal for men </h4>
+                            <h5>$ 30.00</h5>
+                            <p>Lorem ipsum dolor, sit amet consectetur </p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+        </section>
+
+        <!-- ==============================section two=============================== -->
+        <section id="sec-three">
+            <h2>3 . section three</h2>
+            <p class="section-peragraph">create cart shopping app by using javascript</p>
+
+            <div id="container-three">
+                <div class="logo">
+                    <h2><span>E.</span>com</h2>
+                </div>
+                <div class="cart">
+                    <a class="cart-menu"><!--js-->
+                        <img src="image/bag.png" alt="">
+                    </a>
+                    <span class="cart-count"></span>
+                </div>
+            </div>
+
+            <div id="cart-body"><!--js-->
+                <h2 class="cart-body-title">Your Cart</h2>
+                <div class="cart-body-content"><!--js-->
+                    <!-- <div class="cart-box">
+                        <img src="image/clock (1).png" alt="" class="cart-img">
+                        <div class="cart-details">
+                            <h2 class="cart-details-name">model- V11</h2>
+                            <span class="cart-price">$90</span>
+                            <div class="cart-qty">
+                                <button id="minus">-</button>
+                                <span class="number">1</span>
+                                <button id="plus">+</button>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-trash-can" id="card-remove"> </i> 
+                    </div> -->
+                    
+                </div>
+                <div class="total-amount">
+                    <div class="total-title">total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <button class="buy_btn">Buy now</button>
+                <i class="fa-solid fa-x cencel-cart"></i>
+        
+            </div>
+
+            <div id="shop">
+                <div class="shop-head">
+                    <h3 class="shop-title">shop products</h3>
+                    <div class="search-three">
+                        <input type="search" name="" id="searchInput-three" placeholder="Search products">
+                        <img src="img/search (2).png" alt="" id="icon-three">
+                    </div>
+                </div>
+                <div class="shop-product-content">
+                    <div class="product-box"><!--js-->
+                        <div class="img-box">
+                            <img src="image/clock (1).png" alt=""><!--js-->
+                        </div>
+                        <h4 class="product-name">model- V11</h4><!--js-->
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$90</span><!--js-->
+                            <i class="fa-solid fa-cart-shopping add-cart"></i><!--js-->
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (2).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- sports i</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$110</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (3).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- Grey-X</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$80</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (4).png" alt="">
+                        </div>
+                        <h4 class="product-name">model-white fox 10</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$95</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (5).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- casing bold</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$115</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (6).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- border 9</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$75</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (7).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- mark 60</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$115</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (8).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- choclate MV</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$100</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (9).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- pack 400</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$98</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                    <div class="product-box">
+                        <div class="img-box">
+                            <img src="image/clock (10).png" alt="">
+                        </div>
+                        <h4 class="product-name">model- formal fox</h4>
+                        <h5 class="product-title">FasTrack</h5>
+                        <div class="price-and-cart">
+                            <span class="price">$128</span>
+                            <i class="fa-solid fa-cart-shopping add-cart"></i>
+                        </div>
+                    </div>
+                   
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+    
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
